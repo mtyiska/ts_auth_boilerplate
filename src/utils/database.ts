@@ -26,6 +26,4 @@ export default class Database<T> {
       return undefined;
     }
   }
-
-
 }
