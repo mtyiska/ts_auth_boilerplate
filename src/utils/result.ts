@@ -2,20 +2,21 @@ export default class Result<T> {
   data: T | Error;
   status: number;
 
-  constructor(data: T | Error, status: number){
+  constructor(data: T | Error, status: number) {
     this.data = data;
     this.status = status;
   }
 
-  isError(){
+  isError() {
     return this.data instanceof Error;
   }
 
-  getError(){
+  getError() {
     return this.isError() ? this.data as Error : undefined;
   }
-  getObject(){
+
+  getObject() {
     return this.isError() ? undefined : this.data as T;
   }
-
+  
 }
